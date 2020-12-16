@@ -37,7 +37,7 @@ public class InputView {
     }
 
     private void validateNumbersLength(String input) {
-        if (input.length() != BASEBALL_NUMBERS_LENGTH) {
+        if (input.length() != Number.Baseball.NUMBERS_LENGTH.getValue()) {
             throw new IllegalArgumentException("숫자는 " + 3 + "자리수여야 합니다.");
         }
     }
