@@ -30,13 +30,18 @@ public class Controller {
 
     private boolean judgeGame(ComputerPlayer computer, Player player) {
         Map<String, Integer> result = computer.judgeResult(player);
-        if (result.get("strike") == ConstantNumber.Baseball.NUMBERS_LENGTH.getValue()) {
+        final int terminateGame = ConstantNumber.Baseball.NUMBERS_LENGTH.getValue();
+        int strike = result.get("strike");
+        int ball = result.get("ball");
+
+        if (strike == terminateGame) {
             OutputView.printCorrect();
             return true;
         }
-        if (result.get("strike") == 0 && result.get("ball") == 0) {
+        if (strike == 0 && ball == 0) {
             OutputView.printNothing();
         }
+        OutputView.printHint(strike, ball);
         System.out.println(result.get("strike") + " " + result.get("ball"));
         return false;
     }
