@@ -1,17 +1,34 @@
 package baseball;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class InputView {
-    private static final int BASEBALL_NUMBERS_LENGTH = 3;
     private final Scanner scanner;
 
     public InputView(Scanner scanner) {
         this.scanner = scanner;
     }
+
+    public String askContinueGame() {
+        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+        try {
+            String input = scanner.nextLine();
+            validateNumbersFormat(input);
+            validateAskContinueGame(input);
+            return input;
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return askContinueGame();
+        }
+    }
+
+    private void validateAskContinueGame(String input) {
+        if (!input.equals(ConstantNumber.ContinueGameSelection.CONTINUE.getValue())
+            || !input.equals(ConstantNumber.ContinueGameSelection.FINISH.getValue())) {
+            throw new IllegalArgumentException("존재하지 않는 기능입니다.");
+        }
+    }
+
 
     public String inputNumbers() {
         System.out.println("숫자를 입력해주세요 : ");
@@ -32,7 +49,7 @@ public class InputView {
 
     private void validateNumbersLength(String input) {
         if (input.length() != ConstantNumber.Baseball.NUMBERS_LENGTH.getValue()) {
-            throw new IllegalArgumentException("숫자는 " + 3 + "자리수여야 합니다.");
+            throw new IllegalArgumentException("숫자는 " + ConstantNumber.Baseball.NUMBERS_LENGTH.getValue() + "자리수여야 합니다.");
         }
     }
 

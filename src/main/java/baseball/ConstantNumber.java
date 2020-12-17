@@ -16,6 +16,21 @@ public class ConstantNumber {
         }
     }
 
+    public enum ContinueGameSelection {
+        CONTINUE("1"),
+        FINISH("2");
+
+        private final String value;
+
+        ContinueGameSelection(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+    }
+
     public enum RandomRange {
         START_INCLUSIVE(1),
         END_INCLUSIVE(9);
