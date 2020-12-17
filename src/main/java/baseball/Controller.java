@@ -10,11 +10,11 @@ public class Controller {
     }
 
     public void run() {
-        RandomNumberGenerator generator = new RandomNumberGenerator();
-        generator.generate().stream().forEach(x -> System.out.print(x + " "));
-        System.out.println();
+        ComputerPlayer computer = new ComputerPlayer();
+        Player player = new Player();
 
-        InputView inputView = new InputView(scanner);
-        System.out.println(inputView.inputNumbers());
+        computer.generateRandomNumbers();
+        player.enterInput(scanner);
+
     }
 }
