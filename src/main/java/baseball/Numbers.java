@@ -18,7 +18,6 @@ public class Numbers {
     }
 
     public int countSameNumberWithSamePosition(Numbers other) {
-        System.out.println(numbers + ""+ other.numbers);
         return (int) numbers.stream()
                 .filter(number -> numbers.indexOf(number) == other.numbers.indexOf(number))
                 .count();
@@ -29,10 +28,6 @@ public class Numbers {
                 .filter(number -> numbers.indexOf(number) != other.numbers.indexOf(number)
                         && other.numbers.contains(number))
                 .count();
-    }
-
-    public List<Integer> numbers() {
-        return numbers;
     }
 
 }

@@ -2,11 +2,7 @@ package baseball;
 
 public class OutputView {
     public static void printNothing() {
-        System.out.println("낫싱");
-    }
-
-    public static void printHint() {
-
+        System.out.println(Constant.BaseballTerm.NOTHING.korean());
     }
 
     public static void printCorrect() {
@@ -16,10 +12,10 @@ public class OutputView {
     public static void printHint(int strike, int ball) {
         String message = "";
         if (ball != 0) {
-            message += String.format("%d볼 ", ball);
+            message += String.format("%d%s ", ball, Constant.BaseballTerm.BALL.korean());
         }
         if (strike != 0) {
-            message += String.format("%d스트라이크", strike);
+            message += String.format("%d%s", strike, Constant.BaseballTerm.STRIKE.korean());
         }
         System.out.println(String.format(message));
     }

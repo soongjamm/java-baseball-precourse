@@ -23,8 +23,8 @@ public class InputView {
     }
 
     private void validateAskContinueGame(String input) {
-        if (!ConstantNumber.ContinueGameSelection.CONTINUE.equals(input)
-            && !ConstantNumber.ContinueGameSelection.FINISH.equals(input)) {
+        if (!Constant.ContinueGameSelection.CONTINUE.equals(input)
+            && !Constant.ContinueGameSelection.FINISH.equals(input)) {
             throw new IllegalArgumentException("존재하지 않는 기능입니다.");
         }
     }
@@ -36,7 +36,7 @@ public class InputView {
     }
 
     private String inputNumbersAsList() {
-        String input = scanner.nextLine();
+        String input = scanner.nextLine().trim();
         try {
             validateNumbersLength(input);
             validateNumbersFormat(input);
@@ -48,8 +48,8 @@ public class InputView {
     }
 
     private void validateNumbersLength(String input) {
-        if (input.length() != ConstantNumber.Baseball.NUMBERS_LENGTH.getValue()) {
-            throw new IllegalArgumentException("숫자는 " + ConstantNumber.Baseball.NUMBERS_LENGTH.getValue() + "자리수여야 합니다.");
+        if (input.length() != Constant.GameNumber.LENGTH.getValue()) {
+            throw new IllegalArgumentException("숫자는 " + Constant.GameNumber.LENGTH.getValue() + "자리수여야 합니다.");
         }
     }
 

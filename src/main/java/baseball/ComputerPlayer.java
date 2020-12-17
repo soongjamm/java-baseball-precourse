@@ -9,14 +9,13 @@ public class ComputerPlayer {
     public void generateRandomNumbers() {
         RandomNumberGenerator generator = new RandomNumberGenerator();
         numbers = new Numbers(generator.generate());
-        System.out.println(numbers.numbers());
     }
 
     public Map<String, Integer> judgeResult(Player player) {
         Map<String, Integer> result = new HashMap<>();
 
-        result.put("strike", numbers.countSameNumberWithSamePosition(player.numbers()));
-        result.put("ball", numbers.countSameNumberWithDifferentPosition(player.numbers()));
+        result.put(Constant.BaseballTerm.STRIKE.english(), numbers.countSameNumberWithSamePosition(player.numbers()));
+        result.put(Constant.BaseballTerm.BALL.english(), numbers.countSameNumberWithDifferentPosition(player.numbers()));
 
         return result;
     }

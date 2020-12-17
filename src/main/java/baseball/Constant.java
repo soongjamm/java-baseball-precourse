@@ -1,19 +1,43 @@
 package baseball;
 
-public class ConstantNumber {
+public class Constant {
 
-    public enum Baseball {
-        NUMBERS_LENGTH(3);
+    public enum GameNumber {
+        LENGTH(3);
 
         private final int value;
 
-        Baseball(int value) {
+        GameNumber(int value) {
             this.value = value;
         }
 
         public int getValue() {
             return value;
         }
+    }
+
+    public enum BaseballTerm {
+        STRIKE("strike", "스트라이크"),
+        BALL("ball", "볼"),
+        NOTHING("nothhing", "낫싱");
+
+        private final String english;
+
+        BaseballTerm(String english, String korean) {
+            this.english = english;
+            this.korean = korean;
+        }
+
+        public String english() {
+            return english;
+        }
+
+        public String korean() {
+            return korean;
+        }
+
+        private final String korean;
+
     }
 
     public enum ContinueGameSelection {

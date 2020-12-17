@@ -24,7 +24,8 @@ public class Controller {
     public boolean continueGame() {
         InputView inputView = new InputView(scanner);
         String input = inputView.askContinueGame();
-        if (ConstantNumber.ContinueGameSelection.CONTINUE.equals(input)) {
+
+        if (Constant.ContinueGameSelection.CONTINUE.equals(input)) {
             return true;
         }
         return false;
@@ -32,9 +33,9 @@ public class Controller {
 
     private boolean judgeGame(ComputerPlayer computer, Player player) {
         Map<String, Integer> result = computer.judgeResult(player);
-        final int terminateGame = ConstantNumber.Baseball.NUMBERS_LENGTH.getValue();
-        int strike = result.get("strike");
-        int ball = result.get("ball");
+        final int terminateGame = Constant.GameNumber.LENGTH.getValue();
+        int strike = result.get(Constant.BaseballTerm.STRIKE.english());
+        int ball = result.get(Constant.BaseballTerm.BALL.english());
 
         if (strike == terminateGame) {
             OutputView.printCorrect();
