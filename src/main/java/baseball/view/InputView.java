@@ -1,4 +1,6 @@
-package baseball;
+package baseball.view;
+
+import utils.Constant;
 
 import java.util.Scanner;
 

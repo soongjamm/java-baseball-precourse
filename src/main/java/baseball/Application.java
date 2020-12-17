@@ -1,5 +1,7 @@
 package baseball;
 
+import baseball.domain.Controller;
+
 import java.util.Scanner;
 
 public class Application {

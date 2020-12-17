@@ -1,4 +1,6 @@
-package baseball;
+package baseball.view;
+
+import utils.Constant;
 
 public class OutputView {
     public static void printNothing() {

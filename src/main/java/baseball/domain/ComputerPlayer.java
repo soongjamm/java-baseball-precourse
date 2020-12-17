@@ -1,4 +1,6 @@
-package baseball;
+package baseball.domain;
+
+import utils.Constant;
 
 import java.util.HashMap;
 import java.util.Map;

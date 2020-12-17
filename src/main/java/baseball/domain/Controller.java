@@ -1,4 +1,8 @@
-package baseball;
+package baseball.domain;
+
+import utils.Constant;
+import baseball.view.InputView;
+import baseball.view.OutputView;
 
 import java.util.Map;
 import java.util.Scanner;

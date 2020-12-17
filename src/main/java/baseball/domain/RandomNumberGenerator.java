@@ -1,5 +1,6 @@
-package baseball;
+package baseball.domain;
 
+import utils.Constant;
 import utils.RandomUtils;
 
 public class RandomNumberGenerator {
