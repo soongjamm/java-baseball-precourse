@@ -10,21 +10,23 @@ public class Controller {
         this.scanner = scanner;
     }
 
-    public boolean run() {
+    public void run() {
         ComputerPlayer computer = new ComputerPlayer();
         Player player = new Player();
 
+        computer.generateRandomNumbers();
         do {
-            computer.generateRandomNumbers();
             player.enterInput(scanner);
         } while (judgeGame(computer, player));
 
-        return continueGame();
-
     }
 
-    private boolean continueGame() {
-
+    public boolean continueGame() {
+        InputView inputView = new InputView(scanner);
+        String input = inputView.askContinueGame();
+        if (ConstantNumber.ContinueGameSelection.CONTINUE.equals(input)) {
+            return true;
+        }
         return false;
     }
 
@@ -36,13 +38,12 @@ public class Controller {
 
         if (strike == terminateGame) {
             OutputView.printCorrect();
-            return true;
+            return false;
         }
         if (strike == 0 && ball == 0) {
             OutputView.printNothing();
         }
         OutputView.printHint(strike, ball);
-        System.out.println(result.get("strike") + " " + result.get("ball"));
-        return false;
+        return true;
     }
 }

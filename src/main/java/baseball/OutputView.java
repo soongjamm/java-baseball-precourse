@@ -19,7 +19,7 @@ public class OutputView {
             message += String.format("%d볼 ", ball);
         }
         if (strike != 0) {
-            message += String.format("%스트라이크", strike);
+            message += String.format("%d스트라이크", strike);
         }
         System.out.println(String.format(message));
     }

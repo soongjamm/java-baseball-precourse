@@ -29,6 +29,11 @@ public class ConstantNumber {
         public String getValue() {
             return value;
         }
+
+        public boolean equals(String input) {
+            return value.equals(input);
+        }
+
     }
 
     public enum RandomRange {

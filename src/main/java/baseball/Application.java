@@ -7,6 +7,9 @@ public class Application {
         final Scanner scanner = new Scanner(System.in);
         // TODO 구현 진행
         Controller controller = new Controller(scanner);
-        controller.run();
+
+        do {
+            controller.run();
+        } while (controller.continueGame());
     }
 }

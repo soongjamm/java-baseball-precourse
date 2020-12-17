@@ -12,7 +12,7 @@ public class InputView {
     public String askContinueGame() {
         System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
         try {
-            String input = scanner.nextLine();
+            String input = scanner.nextLine().trim();
             validateNumbersFormat(input);
             validateAskContinueGame(input);
             return input;
@@ -23,8 +23,8 @@ public class InputView {
     }
 
     private void validateAskContinueGame(String input) {
-        if (!input.equals(ConstantNumber.ContinueGameSelection.CONTINUE.getValue())
-            || !input.equals(ConstantNumber.ContinueGameSelection.FINISH.getValue())) {
+        if (!ConstantNumber.ContinueGameSelection.CONTINUE.equals(input)
+            && !ConstantNumber.ContinueGameSelection.FINISH.equals(input)) {
             throw new IllegalArgumentException("존재하지 않는 기능입니다.");
         }
     }
@@ -36,7 +36,7 @@ public class InputView {
     }
 
     private String inputNumbersAsList() {
-        String input = scanner.next();
+        String input = scanner.nextLine();
         try {
             validateNumbersLength(input);
             validateNumbersFormat(input);
