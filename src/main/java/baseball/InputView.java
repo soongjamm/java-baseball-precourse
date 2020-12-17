@@ -13,12 +13,12 @@ public class InputView {
         this.scanner = scanner;
     }
 
-    public List<Integer> inputNumbers() {
+    public String inputNumbers() {
         System.out.println("숫자를 입력해주세요 : ");
         return inputNumbersAsList();
     }
 
-    private List<Integer> inputNumbersAsList() {
+    private String inputNumbersAsList() {
         String input = scanner.next();
         try {
             validateNumbersLength(input);
@@ -27,7 +27,7 @@ public class InputView {
             System.out.println(e.getMessage());
             return inputNumbers();
         }
-        return convertStringToIntList(input);
+        return input;
     }
 
     private void validateNumbersLength(String input) {
@@ -44,9 +44,4 @@ public class InputView {
         }
     }
 
-    private List<Integer> convertStringToIntList(String input) {
-        return Arrays.asList(input).stream()
-                .map(x -> Integer.parseInt(x))
-                .collect(Collectors.toList());
-    }
 }

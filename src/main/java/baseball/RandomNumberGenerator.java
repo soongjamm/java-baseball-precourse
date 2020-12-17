@@ -2,21 +2,18 @@ package baseball;
 
 import utils.RandomUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class RandomNumberGenerator {
 
-    public List<Integer> generate() {
-        List<Integer> randomNumbers = new ArrayList<>();
+    public String generate() {
+        String randomNumbers = "";
 
-        while (randomNumbers.size() < ConstantNumber.Baseball.NUMBERS_LENGTH.getValue()) {
-            int newNumber = RandomUtils.nextInt(
+        while (randomNumbers.length() < ConstantNumber.Baseball.NUMBERS_LENGTH.getValue()) {
+            String newNumber = Integer.toString(RandomUtils.nextInt(
                     ConstantNumber.RandomRange.START_INCLUSIVE.getValue(),
-                    ConstantNumber.RandomRange.END_INCLUSIVE.getValue());
+                    ConstantNumber.RandomRange.END_INCLUSIVE.getValue()));
 
             if (!randomNumbers.contains(newNumber)) {
-                randomNumbers.add(newNumber);
+                randomNumbers += newNumber;
             }
         }
         return randomNumbers;

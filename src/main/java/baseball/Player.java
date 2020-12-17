@@ -1,6 +1,5 @@
 package baseball;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class Player {
@@ -9,5 +8,9 @@ public class Player {
     public void enterInput(Scanner scanner) {
         InputView inputView = new InputView(scanner);
         numbers = new Numbers(inputView.inputNumbers());
+    }
+
+    public Numbers numbers() {
+        return numbers;
     }
 }

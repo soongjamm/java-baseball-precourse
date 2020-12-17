@@ -1,5 +1,6 @@
 package baseball;
 
+import java.util.Map;
 import java.util.Scanner;
 
 public class Controller {
@@ -16,7 +17,13 @@ public class Controller {
         computer.generateRandomNumbers();
         player.enterInput(scanner);
 
-        computer.judgeGame(player);
+        judgeGame(computer, player);
 
+    }
+
+    private boolean judgeGame(ComputerPlayer computer, Player player) {
+        Map<String, Integer> result = computer.judgeResult(player);
+        System.out.println(result.get("strike") + " " + result.get("ball"));
+        return true;
     }
 }

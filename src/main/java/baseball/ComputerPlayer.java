@@ -1,6 +1,7 @@
 package baseball;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ComputerPlayer {
     private Numbers numbers;
@@ -8,9 +9,15 @@ public class ComputerPlayer {
     public void generateRandomNumbers() {
         RandomNumberGenerator generator = new RandomNumberGenerator();
         numbers = new Numbers(generator.generate());
+        System.out.println(numbers.numbers());
     }
 
-    public void judgeGame(Player player) {
+    public Map<String, Integer> judgeResult(Player player) {
+        Map<String, Integer> result = new HashMap<>();
 
+        result.put("strike", numbers.countSameNumberWithSamePosition(player.numbers()));
+        result.put("ball", numbers.countSameNumberWithDifferentPosition(player.numbers()));
+
+        return result;
     }
 }
