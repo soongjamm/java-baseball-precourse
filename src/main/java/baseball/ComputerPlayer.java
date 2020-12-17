@@ -3,13 +3,14 @@ package baseball;
 import java.util.List;
 
 public class ComputerPlayer {
-    private List<Integer> numbers;
+    private Numbers numbers;
 
     public void generateRandomNumbers() {
         RandomNumberGenerator generator = new RandomNumberGenerator();
-        numbers = generator.generate();
+        numbers = new Numbers(generator.generate());
     }
 
-    public void judgeGame() {
+    public void judgeGame(Player player) {
+
     }
 }

@@ -16,5 +16,7 @@ public class Controller {
         computer.generateRandomNumbers();
         player.enterInput(scanner);
 
+        computer.judgeGame(player);
+
     }
 }

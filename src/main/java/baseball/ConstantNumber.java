@@ -1,6 +1,6 @@
 package baseball;
 
-public class Number {
+public class ConstantNumber {
 
     public enum Baseball {
         NUMBERS_LENGTH(3);
