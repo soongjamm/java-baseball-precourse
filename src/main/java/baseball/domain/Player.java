@@ -1,6 +1,5 @@
 package baseball.domain;
 
-import baseball.domain.Numbers;
 import baseball.view.InputView;
 
 import java.util.Scanner;
